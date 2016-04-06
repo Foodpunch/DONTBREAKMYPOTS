@@ -13,20 +13,7 @@ public class RoomData : TileData {
         Room3,
     };
     public RoomTypes roomType;
-    public bool isConnected;
-
-    
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-   
+    public bool isConnected;   
 }
 
 public struct RoomDimensions
