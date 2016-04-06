@@ -35,6 +35,10 @@ public class ChestInventory : Inventory {
                 slotAmount++;
             }
         }
+        AddItem(0005);
+        AddItem(0005);
+        AddItem(0005);
+        AddItem(0004);
     }
     
 }
