@@ -12,7 +12,7 @@ public class ItemDatabase : MonoBehaviour {
         items.Add(new Item("pSlime", "Purple Slime", 0002, "A Purple Slime", 10, 20, 180, 1, Item.ItemType.Pet, 1));
         items.Add(new Item("mMana", "Medium Mana Potion", 0003, "Restores a medium amount of mana", 999, 999, 50, 1, Item.ItemType.Consumable, 99));
         items.Add(new Item("cGranny", "Cranky Grandma", 0004, "Why do you have an old woman in your bag????", 10, 20, 180, 1, Item.ItemType.Pet, 1));
-
+        items.Add(new Item("cGold", "Gold Coin", 0005, "$$$$$$$", 10, 20, 180, 1, Item.ItemType.Consumable, 99));
     }
 	
 }

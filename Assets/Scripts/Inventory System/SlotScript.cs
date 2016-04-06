@@ -11,7 +11,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler ,IPointerUpHandler 
     public Text itemAmount;
 
     public Inventory inventory;
-    float doubleClickStart = 0;
+    public float doubleClickStart = 0;
     // Use this for initialization
     public virtual void Start () {
         
@@ -107,6 +107,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler ,IPointerUpHandler 
     {
         if (inventory.itemsList[slotNum].itemName != null)
         {
+            inventory.draggingFromInventory = true;
             inventory.ShowDraggedItem(inventory.itemsList[slotNum], slotNum);
             inventory.itemsList[slotNum] = new Item();
             itemAmount.enabled = false;
