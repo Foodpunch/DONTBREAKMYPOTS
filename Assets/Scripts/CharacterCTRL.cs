@@ -3,14 +3,55 @@ using System.Collections;
 
 public class CharacterCTRL : MonoBehaviour {
     public int speed;
+    public bool flip;
     public int hitPoints;
     private Animator charaAnim;
     private Rigidbody2D rigidBody2D;
     bool moving;
+    bool facingRight;
+    public enum PlayerFacing
+    {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
+    }
+    public PlayerFacing currDir;
 	// Use this for initialization
 	void Start () {
         charaAnim = GetComponent<Animator>();
         rigidBody2D = GetComponent<Rigidbody2D>();
+    }
+    void FlipSprite()
+    {
+        facingRight = !facingRight;
+        Vector3 currScale = transform.localScale;
+        currScale.x *= -1;
+        transform.localScale = currScale;
+    }
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            switch (currDir)
+            {
+                case PlayerFacing.DOWN:
+                    charaAnim.Play("ATTACK DOWN");
+                    break;
+                case PlayerFacing.LEFT:
+                    charaAnim.Play("ATTACK LEFT");
+                    break;
+                case PlayerFacing.RIGHT:
+                    charaAnim.Play("ATTACK RIGHT");
+                    break;
+                case PlayerFacing.UP:
+                    charaAnim.Play("ATTACK UP");
+                    break;
+
+            }
+            
+        }
+            
     }
 	
 	// Update is called once per frame
@@ -32,20 +73,56 @@ public class CharacterCTRL : MonoBehaviour {
 
         if (!moving)
         {
+            if (flip)
+            {
+                if (lookDirX > 0 && !facingRight)
+                {
+                    FlipSprite();
+                }
+                else if (lookDirX < 0 && facingRight)
+                {
+                    FlipSprite();
+                }
+            }
+            
             if (lookDirX > 0.5f)
             {
-                charaAnim.SetInteger("_state", 6);
+                if (flip)
+                {
+                    //FlipSprite();
+                    currDir = PlayerFacing.LEFT;
+                    charaAnim.SetInteger("_state", 6);
+                }
+                else
+                {
+                    charaAnim.SetInteger("_state", 5);
+                    currDir = PlayerFacing.RIGHT;
+                }
+
             }
             else if (lookDirX < -0.5f)
             {
-                charaAnim.SetInteger("_state", 5);
+                if (flip)
+                {
+                    //FlipSprite();
+                    currDir = PlayerFacing.RIGHT;
+                    charaAnim.SetInteger("_state", 6);
+                }
+                else
+                {
+                    charaAnim.SetInteger("_state", 5);
+                    currDir = PlayerFacing.LEFT;
+                }
+                
             }
             else if (lookDirY > 0.5f)
             {
+                currDir = PlayerFacing.DOWN;
                 charaAnim.SetInteger("_state", 0);
             }
             else if (lookDirY < -0.5f)
             {
+                currDir = PlayerFacing.UP;
                 charaAnim.SetInteger("_state", 7);
             }
         }
@@ -56,25 +133,71 @@ public class CharacterCTRL : MonoBehaviour {
             _x = 0;
             //charaAnim.SetInteger("_state", 0);
         }
-        if(_y < 0.5f && _y > -0.5f)
+        if (flip)
+        {
+            if (_x > 0 && !facingRight)
+            {
+                //FlipSprite();
+            }
+            else if (_x < 0 && facingRight)
+            {
+                //FlipSprite();
+            }
+        }
+
+
+
+        if (_y < 0.5f && _y > -0.5f)
         {
             _y = 0;
             //charaAnim.SetInteger("_state", 0);
         }
         if(_x < -0.5f)
         {
-            charaAnim.SetInteger("_state", 2);
+            
+            if (flip)
+            {
+                currDir = PlayerFacing.LEFT;
+                charaAnim.SetInteger("_state", 2);
+                if(transform.localScale.x > 0)
+                {
+                    FlipSprite();
+                }
+                
+            }
+            else
+            {
+                currDir = PlayerFacing.RIGHT;
+                charaAnim.SetInteger("_state", 4);
+            }
         }
         else if (_x > 0.5f)
         {
-            charaAnim.SetInteger("_state", 4);
+            if (flip)
+            {
+                currDir = PlayerFacing.RIGHT;
+                charaAnim.SetInteger("_state", 2);
+                if (transform.localScale.x < 0)
+                {
+                    FlipSprite();
+                }
+                //FlipSprite();
+            }
+            else
+            {
+                currDir = PlayerFacing.RIGHT;
+                charaAnim.SetInteger("_state", 4);
+            }
+            
         }
         if (_y < -0.5f)
         {
+            currDir = PlayerFacing.DOWN;
             charaAnim.SetInteger("_state", 1);
         }
         else if (_y > 0.5f)
         {
+            currDir = PlayerFacing.UP;
             charaAnim.SetInteger("_state", 3);
         }
         if(rigidBody2D.velocity.x == 0 && rigidBody2D.velocity.y == 0)

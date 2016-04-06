@@ -1,0 +1,1359 @@
+fileFormatVersion: 2
+guid: 546f0133d459d054796e0f64b72af4b4
+timeCreated: 1459246309
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Slime_1_zps4587f5b6_0
+    21300002: Slime_1_zps4587f5b6_1
+    21300004: Slime_1_zps4587f5b6_2
+    21300006: Slime_1_zps4587f5b6_3
+    21300008: Slime_1_zps4587f5b6_4
+    21300010: Slime_1_zps4587f5b6_5
+    21300012: Slime_1_zps4587f5b6_6
+    21300014: Slime_1_zps4587f5b6_7
+    21300016: Slime_1_zps4587f5b6_8
+    21300018: Slime_1_zps4587f5b6_9
+    21300020: Slime_1_zps4587f5b6_10
+    21300022: Slime_1_zps4587f5b6_11
+    21300024: Slime_1_zps4587f5b6_12
+    21300026: Slime_1_zps4587f5b6_13
+    21300028: Slime_1_zps4587f5b6_14
+    21300030: Slime_1_zps4587f5b6_15
+    21300032: Slime_1_zps4587f5b6_16
+    21300034: Slime_1_zps4587f5b6_17
+    21300036: Slime_1_zps4587f5b6_18
+    21300038: Slime_1_zps4587f5b6_19
+    21300040: Slime_1_zps4587f5b6_20
+    21300042: Slime_1_zps4587f5b6_21
+    21300044: Slime_1_zps4587f5b6_22
+    21300046: Slime_1_zps4587f5b6_23
+    21300048: Slime_1_zps4587f5b6_24
+    21300050: Slime_1_zps4587f5b6_25
+    21300052: Slime_1_zps4587f5b6_26
+    21300054: Slime_1_zps4587f5b6_27
+    21300056: Slime_1_zps4587f5b6_28
+    21300058: Slime_1_zps4587f5b6_29
+    21300060: Slime_1_zps4587f5b6_30
+    21300062: Slime_1_zps4587f5b6_31
+    21300064: Slime_1_zps4587f5b6_32
+    21300066: Slime_1_zps4587f5b6_33
+    21300068: Slime_1_zps4587f5b6_34
+    21300070: Slime_1_zps4587f5b6_35
+    21300072: Slime_1_zps4587f5b6_36
+    21300074: Slime_1_zps4587f5b6_37
+    21300076: Slime_1_zps4587f5b6_38
+    21300078: Slime_1_zps4587f5b6_39
+    21300080: Slime_1_zps4587f5b6_40
+    21300082: Slime_1_zps4587f5b6_41
+    21300084: Slime_1_zps4587f5b6_42
+    21300086: Slime_1_zps4587f5b6_43
+    21300088: Slime_1_zps4587f5b6_44
+    21300090: Slime_1_zps4587f5b6_45
+    21300092: Slime_1_zps4587f5b6_46
+    21300094: Slime_1_zps4587f5b6_47
+    21300096: Slime_1_zps4587f5b6_48
+    21300098: Slime_1_zps4587f5b6_49
+    21300100: Slime_1_zps4587f5b6_50
+    21300102: Slime_1_zps4587f5b6_51
+    21300104: Slime_1_zps4587f5b6_52
+    21300106: Slime_1_zps4587f5b6_53
+    21300108: Slime_1_zps4587f5b6_54
+    21300110: Slime_1_zps4587f5b6_55
+    21300112: Slime_1_zps4587f5b6_56
+    21300114: Slime_1_zps4587f5b6_57
+    21300116: Slime_1_zps4587f5b6_58
+    21300118: Slime_1_zps4587f5b6_59
+    21300120: Slime_1_zps4587f5b6_60
+    21300122: Slime_1_zps4587f5b6_61
+    21300124: Slime_1_zps4587f5b6_62
+    21300126: Slime_1_zps4587f5b6_63
+    21300128: Slime_1_zps4587f5b6_64
+    21300130: Slime_1_zps4587f5b6_65
+    21300132: Slime_1_zps4587f5b6_66
+    21300134: Slime_1_zps4587f5b6_67
+    21300136: Slime_1_zps4587f5b6_68
+    21300138: Slime_1_zps4587f5b6_69
+    21300140: Slime_1_zps4587f5b6_70
+    21300142: Slime_1_zps4587f5b6_71
+    21300144: Slime_1_zps4587f5b6_72
+    21300146: Slime_1_zps4587f5b6_73
+    21300148: Slime_1_zps4587f5b6_74
+    21300150: Slime_1_zps4587f5b6_75
+    21300152: Slime_1_zps4587f5b6_76
+    21300154: Slime_1_zps4587f5b6_77
+    21300156: Slime_1_zps4587f5b6_78
+    21300158: Slime_1_zps4587f5b6_79
+    21300160: Slime_1_zps4587f5b6_80
+    21300162: Slime_1_zps4587f5b6_81
+    21300164: Slime_1_zps4587f5b6_82
+    21300166: Slime_1_zps4587f5b6_83
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Slime_1_zps4587f5b6_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 448
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 448
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 448
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 448
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 448
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 448
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 448
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 448
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 448
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_9
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 448
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_10
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 448
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_11
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 448
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 384
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 384
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_15
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 384
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 384
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 384
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_18
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 384
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_19
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 384
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_20
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 384
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_21
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 384
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_22
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 384
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_23
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 384
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 320
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_25
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 320
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_26
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 320
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_27
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 320
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_28
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 320
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_29
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 320
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_30
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 320
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_31
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 320
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_32
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 320
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_33
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 320
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_34
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 320
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_35
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 320
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_36
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 256
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_37
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 256
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_38
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 256
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_39
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 256
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_40
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 256
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_41
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 256
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_42
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 256
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_43
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 256
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_44
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 256
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_45
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 256
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_46
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 256
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_47
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 256
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_48
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 192
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_49
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 192
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_50
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 192
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_51
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 192
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_52
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 192
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_53
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 192
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_54
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 192
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_55
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 192
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_56
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 192
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_57
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 128
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_58
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 128
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_59
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_60
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 128
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_61
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 128
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_62
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 128
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_63
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 128
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_64
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 128
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_65
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 128
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -7, y: 18}
+        - {x: -16, y: 4}
+        - {x: -16, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 6}
+    - name: Slime_1_zps4587f5b6_66
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_67
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 64
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_68
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 64
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_69
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_70
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 64
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_71
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 64
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_72
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 64
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -15}
+        - {x: -14, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 8}
+        - {x: 12, y: 18}
+        - {x: -6, y: 18}
+        - {x: -16, y: 4}
+    - name: Slime_1_zps4587f5b6_73
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 64
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_74
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 64
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_75
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_76
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_77
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_78
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_79
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 0
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_80
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_81
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Slime_1_zps4587f5b6_82
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 0
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 16}
+        - {x: -17, y: 2}
+        - {x: -17, y: -13}
+        - {x: -13, y: -16}
+        - {x: 17, y: -16}
+        - {x: 17, y: 7}
+        - {x: 5, y: 16}
+    - name: Slime_1_zps4587f5b6_83
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 0
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

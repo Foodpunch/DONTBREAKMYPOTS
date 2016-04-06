@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: 6fac071f934e06648bd8e94968027cc8
+timeCreated: 1458836965
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Treasure Chest Animation_0
+    21300002: Treasure Chest Animation_1
+    21300004: Treasure Chest Animation_2
+    21300006: Treasure Chest Animation_3
+    21300008: Treasure Chest Animation_4
+    21300010: Treasure Chest Animation_5
+    21300012: Treasure Chest Animation_6
+    21300014: Treasure Chest Animation_7
+    21300016: Treasure Chest Animation_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Treasure Chest Animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 35}
+        - {x: -42.5, y: 13}
+        - {x: -42.5, y: -48}
+        - {x: 42.5, y: -48}
+        - {x: 42.5, y: 33}
+        - {x: 31.5, y: 35}
+    - name: Treasure Chest Animation_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 38}
+        - {x: -42.5, y: 29}
+        - {x: -42.5, y: -48}
+        - {x: 42.5, y: -48}
+        - {x: 42.5, y: 25}
+        - {x: 33.5, y: 38}
+    - name: Treasure Chest Animation_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 38}
+        - {x: -42.5, y: 27}
+        - {x: -42.5, y: -48}
+        - {x: 42.5, y: -48}
+        - {x: 42.5, y: 29}
+        - {x: 33.5, y: 38}
+    - name: Treasure Chest Animation_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 41}
+        - {x: -42.5, y: 37}
+        - {x: -42.5, y: -48}
+        - {x: 42.5, y: -48}
+        - {x: 42.5, y: 37}
+        - {x: 38.5, y: 41}
+    - name: Treasure Chest Animation_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.5, y: 38}
+        - {x: -45.5, y: 27}
+        - {x: -45.5, y: -48}
+        - {x: 45.5, y: -48}
+        - {x: 45.5, y: 28}
+        - {x: 36.5, y: 38}
+    - name: Treasure Chest Animation_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 20}
+        - {x: -52.5, y: 14}
+        - {x: -52.5, y: -48}
+        - {x: 52.5, y: -48}
+        - {x: 52.5, y: 14}
+        - {x: 47.5, y: 20}
+    - name: Treasure Chest Animation_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 44}
+        - {x: -48.5, y: 31}
+        - {x: -48.5, y: -48}
+        - {x: 48.5, y: -48}
+        - {x: 48.5, y: 32}
+        - {x: 41.5, y: 44}
+    - name: Treasure Chest Animation_7
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 48}
+        - {x: -42.5, y: -48}
+        - {x: 42.5, y: -48}
+        - {x: 42.5, y: 28}
+        - {x: 35.5, y: 48}
+    - name: Treasure Chest Animation_8
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 41}
+        - {x: -42.5, y: 27}
+        - {x: -42.5, y: -48}
+        - {x: 42.5, y: -48}
+        - {x: 42.5, y: 26}
+        - {x: 34.5, y: 41}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
