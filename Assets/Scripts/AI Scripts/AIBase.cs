@@ -4,6 +4,7 @@ using System.Collections;
 
 public abstract class AIBase : MonoBehaviour {
     //This script contains all the BASE variables ALL AI will have
+    //Short makes the CPU have overhead because it needs to mask the first 16bits. But short saves memory at the expense of CPU
 
     // PRIVATE CLASSES FOR CHILD CLASS TO DEFINE
     private DamageClass attack;                 //Struct for Attack (Physical, Elemental)
@@ -24,6 +25,8 @@ public abstract class AIBase : MonoBehaviour {
     // VARIABLES FOR AI LOGIC (Logic)
     protected float stateTimer = 0f;                    //Timer for the statemachine
     protected float idleWaitTimer = 3f;                 //how long the idle animation should wait for
+    protected short moveCount;                          //Counts how many directions AI has moved (to make it more realistic)
+    protected short moveLimit;                          //Limit check to randomise how much AI can move
     protected float aggroRange = 15f;                   //Range before AI detects player
     protected Transform _player;                        //Transform of the player
     protected enum StateMachine                         //Enum containing all possible AI States
@@ -36,7 +39,7 @@ public abstract class AIBase : MonoBehaviour {
         ATTACK,
         DEATH
     }
-    protected StateMachine AIStates;                   //Enum states for AI
+   [SerializeField] protected StateMachine AIStates;                   //Enum states for AI
     
     // COMPONENTS IN AI
     protected Transform _AITransform;             //transform of the AI
@@ -68,6 +71,7 @@ public abstract class AIBase : MonoBehaviour {
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();     //gets transform of player
         AIStates = StateMachine.IDLE;                                                       //sets AI to idle first
+        moveLimit = (short)Random.Range(1, 4);
     }
 	
 	// Update is called once per frame
@@ -79,6 +83,8 @@ public abstract class AIBase : MonoBehaviour {
     {
        // float playerRange = DistanceBetween(_player.position, _AITransform.position);
         stateTimer += Time.deltaTime;
+        Vector2 distShit = new Vector2(_player.transform.position.x - _AITransform.position.x, _AITransform.position.y - _player.position.y);
+        Debug.Log(distShit);
         switch (AIStates)
         {
             //AI Action States
@@ -88,6 +94,10 @@ public abstract class AIBase : MonoBehaviour {
                 {
                     AIStates = (StateMachine)Random.Range(0, 3); //picks a random state from up/down/left/right
                     stateTimer = 0;
+                }
+                else if(isAggro())
+                {
+                    AIChaseLogic();
                 }
                 break;
             case StateMachine.ATTACK:   //Contains Attack Logic (play Attack Anim)
@@ -102,49 +112,78 @@ public abstract class AIBase : MonoBehaviour {
             if(isAggro())
                 {
                     //pathfinding logic
+                    float yDiff = _player.position.y- _AITransform.position.y;
+                    if(yDiff < 1f && yDiff > -1f) //how close AI has to be to the player before it changes state
+                    {
+                        //Check for left right
+                        if(_AITransform.position.x < _player.position.x) //if AI is to the left of player
+                        {
+                            AIStates = StateMachine.RIGHT; //move right
+                        }
+                        else //if not
+                        {
+                            AIStates = StateMachine.LEFT; //move left
+                        }
+                    }
+                    else
+                    {
+                        transform.position += Vector3.up * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
+                    }
                 }
             else
                 {
-                    float randWaitTime = Random.Range(1, idleWaitTimer);
-                    Debug.Log(randWaitTime);
+                    //normal movement logic
                     transform.position += Vector3.up * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
-                    if(stateTimer > randWaitTime)
-                    {
-                        stateTimer = 0;
-                        AIStates = (StateMachine)Random.Range(1, 3); //makes sure it doesn't pick itself again
-                    }
+                    ChangeState((int)AIStates);
                 }
                 break;
             case StateMachine.DOWN:
                 if (isAggro())
                 {
                     //pathfinding logic
+                    float yDiff = _player.position.y - _AITransform.position.y;
+                    if (yDiff < 1f && yDiff > -1f) //how close AI has to be to the player before it changes state
+                    {
+                        if (_AITransform.position.x < _player.position.x) //horizontal check if player is to left or right of AI
+                        {
+                            AIStates = StateMachine.RIGHT; //if AI is to the left of player, move Ai right
+                        }
+                        else 
+                        {
+                            AIStates = StateMachine.LEFT;//if AI is to the right of the player, move AI left
+                        }
+                    }
+                    else 
+                    {
+                        transform.position += Vector3.down * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
+                    }
                 }
                 else
                 {
-                    float randWaitTime = Random.Range(1, idleWaitTimer);
+                    //normal movement logic
                     transform.position += Vector3.down * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
-                    if (stateTimer > randWaitTime)
-                    {
-                        stateTimer = 0;
-                        AIStates = (StateMachine)((Random.Range(1, 3)+1)%4); //makes sure it doesn't pick itself again
-                    }
+                    ChangeState((int)AIStates);
                 }
                 break;
             case StateMachine.LEFT:
                 if (isAggro())
                 {
                     //pathfinding logic
+                    float xDiff = _player.transform.position.x- _AITransform.position.x;
+                    if(xDiff < 1f && xDiff > -1f)           //if AI is close enough to player horizontally
+                    {
+                        AIChaseLogic(); //checks for updown again
+                    }
+                    else
+                    {
+                        transform.position += Vector3.left * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
+                    }
                 }
                 else
                 {
-                    float randWaitTime = Random.Range(1, idleWaitTimer);
+                    //normal movement logic
                     transform.position += Vector3.left * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
-                    if (stateTimer > randWaitTime)
-                    {
-                        stateTimer = 0;
-                        AIStates = (StateMachine)((Random.Range(1, 3) + 2) % 4); //makes sure it doesn't pick itself again
-                    }
+                    ChangeState((int)AIStates);
                 }
 
                 break;
@@ -152,28 +191,71 @@ public abstract class AIBase : MonoBehaviour {
                 if (isAggro())
                 {
                     //pathfinding logic
+                    float xDiff = _AITransform.position.x - _player.transform.position.x;
+                    if (xDiff < 1f && xDiff > -1f)           //if AI is close enough to player horizontally
+                    {
+                        AIChaseLogic(); //checks for updown again
+                    }
+                    else
+                    {
+                        transform.position += Vector3.right * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
+                    }
                 }
                 else
                 {
-                    float randWaitTime = Random.Range(1, idleWaitTimer);
+                    //normal movement logic
                     transform.position += Vector3.right * moveSpeed * Time.fixedDeltaTime; //fixex delta for physics shenanigans
-                    if (stateTimer > randWaitTime)
-                    {
-                        stateTimer = 0;
-                        AIStates = (StateMachine)((Random.Range(1, 3) + 3) % 4); //makes sure it doesn't pick itself again
-                    }
+                    ChangeState((int)AIStates);
                 }
                 break;
         }
+        if(moveCount > moveLimit)       //move limiter to reset the movement back to idle 
+        {
+            moveLimit = (short)Random.Range(1, 4);      //picks new move limit
+            moveCount = 0;                              //resets move counter
+            stateTimer = 0;                             //resets state timer since state is changed
+            AIStates = StateMachine.IDLE;               //sets state to idle
+        }
     }
-    protected virtual void AIMovementLogic()
+    protected virtual void AIChaseLogic()
     {
-
+        if (DistanceBetween(_AITransform.position, _player.transform.position) < 1f)
+        {
+            //if the AI is close enough to the player, ATTACK!
+            AIStates = StateMachine.ATTACK;
+        }
+        if (isAggro())
+        {
+            if (_AITransform.position.y < _player.position.y)
+            {
+                AIStates = StateMachine.UP;
+            }
+            else
+            {
+                AIStates = StateMachine.DOWN;
+            }
+        }
+        else //reset the statemachine
+        {
+            stateTimer = 0;
+            moveCount = 0;
+            AIStates = StateMachine.IDLE;
+        }
+        
+    }
+    protected void ChangeState(int currState)
+    {
+        float randWaitTime = Random.Range(1, idleWaitTimer);
+        if(stateTimer > randWaitTime)
+        {
+            stateTimer = 0;
+            moveCount++;
+            AIStates = (StateMachine)((Random.Range(1, 3) + currState) % 4); //makes sure it doesn't pick itself again
+        }
     }
 
     protected virtual void PlayAnim(StateMachine _state)
     {
-        Debug.Log((int)_state);
         _anim.Play(animNames[(int)_state]);
     }
     protected bool isAggro()
