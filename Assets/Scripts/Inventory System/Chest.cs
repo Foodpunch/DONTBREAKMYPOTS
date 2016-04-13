@@ -11,6 +11,7 @@ public class Chest : MonoBehaviour {
     ChestInventory chestInv;
     public GameObject chestContents;
     GameObject _canvas;
+    Inventory _inventory;
 	// Use this for initialization
 	void Start () {
         ChestAnimation = GetComponent<Animator>();
