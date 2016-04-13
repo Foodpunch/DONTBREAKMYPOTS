@@ -40,10 +40,13 @@ public abstract class AIBase : MonoBehaviour {
         DEATH
     }
    [SerializeField] protected StateMachine AIStates;                   //Enum states for AI
+   [SerializeField] protected bool hasToFlipAnim = true;               //if the AI has to flip its animation
+   [SerializeField] protected bool isFacingRight;                      //Checks if the AI is facing right or left
     
     // COMPONENTS IN AI
     protected Transform _AITransform;             //transform of the AI
     protected Animator _anim;                     //Animator for AI
+    protected SpriteRenderer _spriteRenderer;     //Sprite of the AI
     [SerializeField] protected string[] animNames;//Names for animations (0:Up 1:Down 2:Left 3:Right 4: Idle 5:Attack 6:Death)
     protected Rigidbody2D _rigidBody;               //RigidBody for AI
     
@@ -63,6 +66,7 @@ public abstract class AIBase : MonoBehaviour {
         element = new Element(_element);
         //Get the components
         _anim = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _AITransform = GetComponent<Transform>();
 	}
@@ -166,6 +170,7 @@ public abstract class AIBase : MonoBehaviour {
                 }
                 break;
             case StateMachine.LEFT:
+                isFacingRight = false;
                 if (isAggro())
                 {
                     //pathfinding logic
@@ -188,6 +193,8 @@ public abstract class AIBase : MonoBehaviour {
 
                 break;
             case StateMachine.RIGHT:
+                //Animation for the sprite needs to be flipped when it walks to the right
+                isFacingRight = true; //flips the sprite
                 if (isAggro())
                 {
                     //pathfinding logic
@@ -257,6 +264,10 @@ public abstract class AIBase : MonoBehaviour {
     protected virtual void PlayAnim(StateMachine _state)
     {
         _anim.Play(animNames[(int)_state]);
+        if(hasToFlipAnim)                                       //if the animation has to be flipped
+        {
+            _spriteRenderer.flipX = isFacingRight;              //flip the animation!
+        }
     }
     protected bool isAggro()
     {
