@@ -58,20 +58,36 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler ,IPointerUpHandler 
         {
             doubleClickStart = Time.time;
         }
-        
-       
+
 
         if (inventory.itemsList[slotNum].itemName == null && inventory.draggingItem)
         {
             inventory.itemsList[slotNum] = inventory.draggedItem;
             inventory.HideDraggedItem();
         }
-        else if (inventory.itemsList[slotNum].itemName != null && inventory.draggingItem)
+        else if (inventory.itemsList[slotNum].itemName != null && inventory.draggingItem && inventory.activeChestInv == null)
         {
             inventory.itemsList[inventory.draggedItemIndex] = inventory.itemsList[slotNum];
             inventory.itemsList[slotNum] = inventory.draggedItem;
             inventory.HideDraggedItem();
         }
+        else if (inventory.itemsList[slotNum].itemName != null && inventory.draggingItem && inventory.activeChestInv != null)
+        {
+            if (!inventory.draggingFromInventory)
+            {
+                inventory.activeChestInv.itemsList[inventory.draggedItemIndex] = inventory.itemsList[slotNum];
+                inventory.itemsList[slotNum] = inventory.draggedItem;
+                inventory.HideDraggedItem();
+            }
+            else
+            {
+                inventory.itemsList[inventory.draggedItemIndex] = inventory.itemsList[slotNum];
+                inventory.itemsList[slotNum] = inventory.draggedItem;
+                inventory.HideDraggedItem();
+            }
+        }
+
+
     }
     public virtual void OnPointerUp(PointerEventData data)
     {

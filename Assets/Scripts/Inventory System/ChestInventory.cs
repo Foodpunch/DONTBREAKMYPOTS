@@ -5,9 +5,12 @@ using System.Collections.Generic;
 
 public class ChestInventory : Inventory {
 
-
+    Bag bag;
+    Inventory _inventory;
     public override void Start()
     {
+        bag = GameObject.FindWithTag("Bag").GetComponent<Bag>();
+        _inventory = bag.inv.GetComponent<Inventory>();
         _canvas = GameObject.FindWithTag("Canvas");
         DragAndDropTransform = DragAndDropIcon.GetComponent<RectTransform>();
         itemDatabase = GameObject.FindWithTag("ItemDatabase").GetComponent<ItemDatabase>();
@@ -35,10 +38,15 @@ public class ChestInventory : Inventory {
                 slotAmount++;
             }
         }
-        AddItem(0005);
-        AddItem(0005);
-        AddItem(0005);
-        AddItem(0004);
+        transform.gameObject.SetActive(false);
+    }
+    public void HideChest()
+    {
+        transform.gameObject.SetActive(false);
+        _inventory.activeChest.itemsList = itemsList;
+        bag.CloseBag();
+        _inventory.activeChest = null;
+        _inventory.activeChestInv = null;
     }
     
 }

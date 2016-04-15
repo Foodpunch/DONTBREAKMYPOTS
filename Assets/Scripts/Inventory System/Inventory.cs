@@ -28,7 +28,8 @@ public class Inventory : MonoBehaviour {
     public int draggedItemIndex;
     public GameObject _canvas;
     public bool draggingFromInventory;
-    public ChestInventory activeChest;
+    public ChestInventory activeChestInv;
+    public Chest activeChest;
     // Use this for initialization
     public virtual void Start () {
         _canvas = GameObject.FindWithTag("Canvas");
@@ -58,15 +59,7 @@ public class Inventory : MonoBehaviour {
                 slotAmount++;
             }
         }
-
-        //AddItem(0);
-        //AddItem(1);
-        //AddItem(2);
-        //for(int i = 0; i < 120; i++)
-        //{
-
-        //    AddItem(3);
-        //}
+        transform.gameObject.SetActive(false);
     }
     public void CheckIfItemExists(int id, Item item)
     {
