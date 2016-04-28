@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour {
     public int draggedItemIndex;
     public GameObject _canvas;
     public bool draggingFromInventory;
-    public GameObject activeChest;
+    public ChestInventory activeChest;
     // Use this for initialization
     public virtual void Start () {
         _canvas = GameObject.FindWithTag("Canvas");

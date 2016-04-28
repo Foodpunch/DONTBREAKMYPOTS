@@ -11,17 +11,19 @@ public class Chest : MonoBehaviour {
     ChestInventory chestInv;
     public GameObject chestContents;
     GameObject _canvas;
+    Inventory _inventory;
 	// Use this for initialization
 	void Start () {
         ChestAnimation = GetComponent<Animator>();
         playerCol = GameObject.FindWithTag("Player").GetComponent<PlayerCol>();
+        _inventory = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
         //_canvas = GameObject.FindWithTag("Canvas");
         //chestInv = chestContents.GetComponent<ChestInventory>();
     }
 
     public void ShowChestContents()
     {
-        
+        //_inventory.activeChest
     }
     public void HideChestContents()
     {
