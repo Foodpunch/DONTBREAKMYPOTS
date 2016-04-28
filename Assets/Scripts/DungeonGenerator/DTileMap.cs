@@ -10,6 +10,8 @@ public class DTileMap {
         public int width;
         public int height;
 
+        //items in room and room type
+
         public bool isConnected = false;
 
         public int center_x
@@ -77,7 +79,7 @@ public class DTileMap {
             int rsy = Random.Range(4, 8);
             r = new DRoom();
             r.left = Random.Range(0, size_x - rsx);
-            r.top = Random.Range(0, size_y - rsy);
+            r.top = Random.Range(1, size_y - rsy);
             r.width = rsx;
             r.height = rsy;
 
@@ -193,7 +195,7 @@ public class DTileMap {
         }
         while(y != r2.center_y)
         {
-            map_data[x, y] = 13;
+            map_data[x, y] = 22;
             y += y < r2.center_y ? 1 : -1;
         }
         r1.isConnected = true;

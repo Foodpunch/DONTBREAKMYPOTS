@@ -97,7 +97,7 @@ public abstract class AIBase : MonoBehaviour {
             case StateMachine.IDLE:     //AI's state upon init (plays down Anim)
                 //AI idles for 3 seconds before moving randomly if player not in range
                 //if the AI can attack (which means he is close enough to the AI, he attacks after waiting)
-                if(canAttack())
+                if(canAttack)
                 {
                     if (stateTimer > idleWaitTimer)
                     {
@@ -105,23 +105,23 @@ public abstract class AIBase : MonoBehaviour {
                         stateTimer = 0f;
                     }
                 }
-                if(stateTimer > idleWaitTimer && !isAggro() && !canAttack())
+                if(stateTimer > idleWaitTimer && !isAggro && !canAttack)
                 {
                     AIStates = (StateMachine)Random.Range(0, 3); //picks a random state from up/down/left/right
                     stateTimer = 0;
                 }
-                else if(isAggro() && !canAttack())          
+                else if(isAggro && !canAttack)          
                 {
                     AIChaseLogic();
                 }
                 break;
             case StateMachine.ATTACK:   //Contains Attack Logic (play Attack Anim)
-                if(stateTimer > attackSpeed && isAggro() && canAttack())  
+                if(stateTimer > attackSpeed && isAggro && canAttack)  
                 {
                     AIStates = StateMachine.IDLE;
                     stateTimer = 0f;
                 }
-                else if (!canAttack() || !isAggro()) //if player is out of range of attack or aggro
+                else if (!canAttack || !isAggro) //if player is out of range of attack or aggro
                 {
                     AIStates = StateMachine.IDLE; //it's really hard for the player to immediately exit aggro range o
                     stateTimer = 0f;              //resets statetimer for idle (it'll most probably just continue chasing the player anyway)
@@ -136,10 +136,10 @@ public abstract class AIBase : MonoBehaviour {
 
             //AI Movement States
             case StateMachine.UP:
-            if(isAggro())
+            if(isAggro)
                 {
                     //Check if within range of attack
-                    if(canAttack())
+                    if(canAttack)
                     {
                         //Store the previous movement state before it switches. Then
                         prevState = AIStates;
@@ -174,10 +174,10 @@ public abstract class AIBase : MonoBehaviour {
                 }
                 break;
             case StateMachine.DOWN:
-                if (isAggro())
+                if (isAggro)
                 {
                     //Check if within range of attack
-                    if (canAttack())
+                    if (canAttack)
                     {
                         //Store the previous movement state before it switches. Then
                         prevState = AIStates;
@@ -212,10 +212,10 @@ public abstract class AIBase : MonoBehaviour {
                 break;
             case StateMachine.LEFT:
                 isFacingRight = false;
-                if (isAggro())
+                if (isAggro)
                 {
                     //Check if within range of attack
-                    if (canAttack())
+                    if (canAttack)
                     {
                         //Store the previous movement state before it switches. Then
                         prevState = AIStates;
@@ -245,10 +245,10 @@ public abstract class AIBase : MonoBehaviour {
             case StateMachine.RIGHT:
                 //Animation for the sprite needs to be flipped when it walks to the right
                 isFacingRight = true; //flips the sprite
-                if (isAggro())
+                if (isAggro)
                 {
                     //Check if within range of attack
-                    if (canAttack())
+                    if (canAttack)
                     {
                         //Store the previous movement state before it switches. Then
                         prevState = AIStates;
@@ -285,7 +285,7 @@ public abstract class AIBase : MonoBehaviour {
     }
     protected virtual void AIChaseLogic()
     {
-        if (isAggro())
+        if (isAggro)
         {    
             if (_AITransform.position.y < _player.position.y)
             {
@@ -331,14 +331,26 @@ public abstract class AIBase : MonoBehaviour {
             _spriteRenderer.flipX = isFacingRight;              //flip the animation!
         }
     }
-    
-    protected bool isAggro()
+    protected bool CheckCollision
     {
-      return DistanceBetween(_player.position, _AITransform.position) < aggroRange ? true : false;
+        get {
+            if (Physics2D.Raycast(transform.position, Vector2.up * 2))
+                return true;
+            if (Physics2D.Raycast(transform.position, Vector2.down * 2))
+                return true;
+            else return false;
+
+
+
+        }
     }
-    protected bool canAttack()
+    protected bool isAggro
     {
-        return DistanceBetween(_AITransform.position, _player.transform.position) < attackRange ? true : false;
+      get { return DistanceBetween(_player.position, _AITransform.position) < aggroRange ? true : false; }
+    }
+    protected bool canAttack
+    {
+        get { return DistanceBetween(_AITransform.position, _player.transform.position) < attackRange ? true : false; }
     }
 
     protected float DistanceBetween(Vector2 A, Vector2 B) //function to calculate distance between 2 Vector2's
