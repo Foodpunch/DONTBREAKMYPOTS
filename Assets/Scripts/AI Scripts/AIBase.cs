@@ -9,7 +9,7 @@ public abstract class AIBase : MonoBehaviour {
     // PRIVATE CLASSES FOR CHILD CLASS TO DEFINE
     private DamageClass attack;                 //Struct for Attack (Physical, Elemental)
     private DamageClass defense;                //Struct for Defense (Physical, Elemental)
-    private Element element;                   //Elemental Damage AI does
+    private Element element;                    //Elemental Damage AI does
 
     // VARIABLES FOR AI (stats)
     protected int health = 5;                               //Health AI has
@@ -28,6 +28,7 @@ public abstract class AIBase : MonoBehaviour {
     protected short moveCount;                          //Counts how many directions AI has moved (to make it more realistic)
     protected short moveLimit;                          //Limit check to randomise how much AI can move
     protected float aggroRange = 15f;                   //Range before AI detects player
+    [SerializeField] protected float attackRange = 1f;                   //Range before AI Attacks (not an actual AI stat, but more for checking)
     protected Transform _player;                        //Transform of the player
     protected enum StateMachine                         //Enum containing all possible AI States
     {
@@ -40,21 +41,24 @@ public abstract class AIBase : MonoBehaviour {
         DEATH
     }
    [SerializeField] protected StateMachine AIStates;                   //Enum states for AI
+   protected StateMachine prevState;                                   //Stores previous state for attack animation stuff
    [SerializeField] protected bool hasToFlipAnim = true;               //if the AI has to flip its animation
    [SerializeField] protected bool isFacingRight;                      //Checks if the AI is facing right or left
     
     // COMPONENTS IN AI
-    protected Transform _AITransform;             //transform of the AI
-    protected Animator _anim;                     //Animator for AI
-    protected SpriteRenderer _spriteRenderer;     //Sprite of the AI
-    [SerializeField] protected string[] animNames;//Names for animations (0:Up 1:Down 2:Left 3:Right 4: Idle 5:Attack 6:Death)
-    protected Rigidbody2D _rigidBody;               //RigidBody for AI
-    
-    
+    protected Transform _AITransform;                //transform of the AI
+    protected Animator _anim;                        //Animator for AI
+    protected SpriteRenderer _spriteRenderer;        //Sprite of the AI
+    [SerializeField] protected string[] animNames;   //Names for animations (0:Up 1:Down 2:Left 3:Right 4: Idle 5:Death 6:Extra)
+    [SerializeField] protected string[] attAnims;    //Names for the attack animations (0:up 1:down 2:left 3:right)
+    protected Rigidbody2D _rigidBody;                //RigidBody for AI
+
+
     //HP bar class?
 
 
     //ABSTRACT FUNCTIONS
+    protected abstract void AttackAbility();
     protected abstract void SpecialAbility();
 
 
@@ -85,26 +89,45 @@ public abstract class AIBase : MonoBehaviour {
 	}
     protected virtual void AIPathFinding()
     {
-       // float playerRange = DistanceBetween(_player.position, _AITransform.position);
         stateTimer += Time.deltaTime;
-        Vector2 distShit = new Vector2(_player.transform.position.x - _AITransform.position.x, _AITransform.position.y - _player.position.y);
-        Debug.Log(distShit);
+
         switch (AIStates)
         {
             //AI Action States
             case StateMachine.IDLE:     //AI's state upon init (plays down Anim)
                 //AI idles for 3 seconds before moving randomly if player not in range
-                if(stateTimer > idleWaitTimer && !isAggro())
+                //if the AI can attack (which means he is close enough to the AI, he attacks after waiting)
+                if(canAttack())
+                {
+                    if (stateTimer > idleWaitTimer)
+                    {
+                        AIStates = StateMachine.ATTACK;
+                        stateTimer = 0f;
+                    }
+                }
+                if(stateTimer > idleWaitTimer && !isAggro() && !canAttack())
                 {
                     AIStates = (StateMachine)Random.Range(0, 3); //picks a random state from up/down/left/right
                     stateTimer = 0;
                 }
-                else if(isAggro())
+                else if(isAggro() && !canAttack())          
                 {
                     AIChaseLogic();
                 }
                 break;
             case StateMachine.ATTACK:   //Contains Attack Logic (play Attack Anim)
+                if(stateTimer > attackSpeed && isAggro() && canAttack())  
+                {
+                    AIStates = StateMachine.IDLE;
+                    stateTimer = 0f;
+                }
+                else if (!canAttack() || !isAggro()) //if player is out of range of attack or aggro
+                {
+                    AIStates = StateMachine.IDLE; //it's really hard for the player to immediately exit aggro range o
+                    stateTimer = 0f;              //resets statetimer for idle (it'll most probably just continue chasing the player anyway)
+                   
+                }
+                
              
                 break;
             case StateMachine.DEATH:    //Contains Death Logic  (play Death Anim)
@@ -115,6 +138,15 @@ public abstract class AIBase : MonoBehaviour {
             case StateMachine.UP:
             if(isAggro())
                 {
+                    //Check if within range of attack
+                    if(canAttack())
+                    {
+                        //Store the previous movement state before it switches. Then
+                        prevState = AIStates;
+                        //if the AI is close enough to the player, ATTACK!
+                        AIStates = StateMachine.ATTACK;
+                       stateTimer = 0f;
+                    }
                     //pathfinding logic
                     float yDiff = _player.position.y- _AITransform.position.y;
                     if(yDiff < 1f && yDiff > -1f) //how close AI has to be to the player before it changes state
@@ -144,6 +176,15 @@ public abstract class AIBase : MonoBehaviour {
             case StateMachine.DOWN:
                 if (isAggro())
                 {
+                    //Check if within range of attack
+                    if (canAttack())
+                    {
+                        //Store the previous movement state before it switches. Then
+                        prevState = AIStates;
+                        //if the AI is close enough to the player, ATTACK!
+                        AIStates = StateMachine.ATTACK;
+                       stateTimer = 0f;
+                    }
                     //pathfinding logic
                     float yDiff = _player.position.y - _AITransform.position.y;
                     if (yDiff < 1f && yDiff > -1f) //how close AI has to be to the player before it changes state
@@ -154,7 +195,7 @@ public abstract class AIBase : MonoBehaviour {
                         }
                         else 
                         {
-                            AIStates = StateMachine.LEFT;//if AI is to the right of the player, move AI left
+                            AIStates = StateMachine.LEFT; //if AI is to the right of the player, move AI left
                         }
                     }
                     else 
@@ -173,6 +214,15 @@ public abstract class AIBase : MonoBehaviour {
                 isFacingRight = false;
                 if (isAggro())
                 {
+                    //Check if within range of attack
+                    if (canAttack())
+                    {
+                        //Store the previous movement state before it switches. Then
+                        prevState = AIStates;
+                        //if the AI is close enough to the player, ATTACK!
+                        AIStates = StateMachine.ATTACK;
+                        stateTimer = 0f;
+                    }
                     //pathfinding logic
                     float xDiff = _player.transform.position.x- _AITransform.position.x;
                     if(xDiff < 1f && xDiff > -1f)           //if AI is close enough to player horizontally
@@ -197,6 +247,15 @@ public abstract class AIBase : MonoBehaviour {
                 isFacingRight = true; //flips the sprite
                 if (isAggro())
                 {
+                    //Check if within range of attack
+                    if (canAttack())
+                    {
+                        //Store the previous movement state before it switches. Then
+                        prevState = AIStates;
+                        //if the AI is close enough to the player, ATTACK!
+                        AIStates = StateMachine.ATTACK;
+                        stateTimer = 0f;
+                    }
                     //pathfinding logic
                     float xDiff = _AITransform.position.x - _player.transform.position.x;
                     if (xDiff < 1f && xDiff > -1f)           //if AI is close enough to player horizontally
@@ -226,13 +285,8 @@ public abstract class AIBase : MonoBehaviour {
     }
     protected virtual void AIChaseLogic()
     {
-        if (DistanceBetween(_AITransform.position, _player.transform.position) < 1f)
-        {
-            //if the AI is close enough to the player, ATTACK!
-            AIStates = StateMachine.ATTACK;
-        }
         if (isAggro())
-        {
+        {    
             if (_AITransform.position.y < _player.position.y)
             {
                 AIStates = StateMachine.UP;
@@ -241,6 +295,7 @@ public abstract class AIBase : MonoBehaviour {
             {
                 AIStates = StateMachine.DOWN;
             }
+
         }
         else //reset the statemachine
         {
@@ -252,7 +307,7 @@ public abstract class AIBase : MonoBehaviour {
     }
     protected void ChangeState(int currState)
     {
-        float randWaitTime = Random.Range(1, idleWaitTimer);
+        float randWaitTime = Random.Range(1, idleWaitTimer-1);
         if(stateTimer > randWaitTime)
         {
             stateTimer = 0;
@@ -261,17 +316,29 @@ public abstract class AIBase : MonoBehaviour {
         }
     }
 
-    protected virtual void PlayAnim(StateMachine _state)
+    protected virtual void PlayAnim(StateMachine _state)  //plays appropriate animations
     {
-        _anim.Play(animNames[(int)_state]);
+       if(_state != StateMachine.ATTACK)        //if current state is not attack state
+        {
+            _anim.Play(animNames[(int)_state]); //play NON ATTACK animations
+        }
+       else                                     //else if it's in attack state
+        {
+            _anim.Play(attAnims[(int)prevState]);   //play attack animations
+        }
         if(hasToFlipAnim)                                       //if the animation has to be flipped
         {
             _spriteRenderer.flipX = isFacingRight;              //flip the animation!
         }
     }
+    
     protected bool isAggro()
     {
       return DistanceBetween(_player.position, _AITransform.position) < aggroRange ? true : false;
+    }
+    protected bool canAttack()
+    {
+        return DistanceBetween(_AITransform.position, _player.transform.position) < attackRange ? true : false;
     }
 
     protected float DistanceBetween(Vector2 A, Vector2 B) //function to calculate distance between 2 Vector2's
