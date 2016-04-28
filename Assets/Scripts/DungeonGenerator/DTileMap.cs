@@ -59,21 +59,6 @@ public class DTileMap {
     int[,] map_data; //maybe can use enums for this
     List<DRoom> rooms;
 
-    //0 is floor
-    //1 is wood
-    //2 is black
-    //3 is wall
-    //4 is bottom left corner
-    //5 is top right corner
-
-
-
-    //public DTileMap()
-    //{
-    //    DTileMap(20, 20);
-    //}
-
-
     public DTileMap(int sizeX, int sizeY)
     {
         DRoom r;
@@ -150,21 +135,42 @@ public class DTileMap {
         {
             for(int y=0;y<r.height;y++)
             {
-                if(x== 0 || x == r.width -1 || y == 0 || y == r.height -1)
+               
+                if (y == r.height -1)
                 {
-                    map_data[r.left + x, r.top + y] = 3;
+                    map_data[r.left + x, r.top + y] = 19;
                 }
                 else
                 {
-                    map_data[r.left + x, r.top + y] = 1;
+                    map_data[r.left + x, r.top + y] = 13;
                 }
-                if(x==0 && y == 0)
+                if (x == 0)
                 {
-                    map_data[r.left + x, r.top + y] = 4;
+                    map_data[r.left + x, r.top + y] = 12;
+                }
+                if (y == 0)
+                {
+                    map_data[r.left + x, r.top + y] = 7;
+                }
+                if (x == r.width-1)
+                {
+                    map_data[r.left + x, r.top + y] = 14;
+                }
+                if (x==0 && y == 0)
+                {
+                    map_data[r.left + x, r.top + y] = 6;
+                }
+                if(x== 0 && y == r.height-1)
+                {
+                    map_data[r.left + x, r.top + y] = 18;
+                }
+                if(x == r.width-1 && y ==0)
+                {
+                    map_data[r.left + x, r.top + y] = 8;
                 }
                 if(x == r.width-1 && y == r.height-1)
                 {
-                    map_data[r.left + x, r.top + y] = 5;
+                    map_data[r.left + x, r.top + y] = 20;
                 }
 
                 
@@ -180,14 +186,14 @@ public class DTileMap {
 
         while(x !=r2.center_x)
         {
-            map_data[x, y] = 1;
+            map_data[x, y] = 13;
             //can do a check here to make adjacent tiles to the corridor become wall tiles
             //but a little complicated because you need to check for quite a bit
             x += x < r2.center_x ? 1 : -1;
         }
         while(y != r2.center_y)
         {
-            map_data[x, y] = 1;
+            map_data[x, y] = 13;
             y += y < r2.center_y ? 1 : -1;
         }
         r1.isConnected = true;
@@ -202,7 +208,7 @@ public class DTileMap {
             {
                 if(map_data[x,y] == 0 && hasAdjacentFloor(x, y))
                 {
-                    map_data[x, y] = 3;
+                    map_data[x, y] = 12;
                 }
             }
         }
