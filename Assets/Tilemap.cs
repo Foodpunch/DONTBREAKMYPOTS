@@ -34,7 +34,7 @@ public class Tilemap : MonoBehaviour {
     }
     void CreateTexture()
     {
-   
+        DTileMap map = new DTileMap(size_x, size_z);
 
         int textWidth = size_x * tileRes;
         int textHeight = size_z * tileRes;
@@ -46,7 +46,7 @@ public class Tilemap : MonoBehaviour {
         {
             for (int x = 0; x < size_x; x++)
             {
-               Color[] _colors =  tiles[Random.Range(0,4)];
+               Color[] _colors =  tiles[map.GetTileAt(x,y)];
                 _texture.SetPixels(x * tileRes, y * tileRes, tileRes, tileRes, _colors);
             }
         }
@@ -60,6 +60,7 @@ public class Tilemap : MonoBehaviour {
 
     public void CreateMesh()
     {
+
         int numTiles = size_x * size_z;
         int numTris = numTiles * 2;
         int vsize_x = size_x + 1;
@@ -77,9 +78,9 @@ public class Tilemap : MonoBehaviour {
         {
             for (x = 0; x < vsize_x; x++)
             {
-                _verts[z * vsize_x + x] = new Vector3(x * tileSize, 0, z * tileSize);
+                _verts[z * vsize_x + x] = new Vector3(x * tileSize, 0, -z * tileSize);
                 _normals[z * vsize_x + x] = Vector3.up;
-                _uvs[z * vsize_x + x] = new Vector2((float)x / vsize_x, (float)z / vsize_z);
+                _uvs[z * vsize_x + x] = new Vector2((float)x / vsize_x,1f - (float)z / vsize_z);
             }
         }
         for (z = 0; z < size_z; z++)
@@ -89,12 +90,12 @@ public class Tilemap : MonoBehaviour {
                 int sqIndex = z * size_x + x;
                 int trisOffset = sqIndex * 6;
                 _tris[trisOffset + 0] = z * vsize_x + x +           0;
-                _tris[trisOffset + 1] = z * vsize_x + x + vsize_x + 0;
-                _tris[trisOffset + 2] = z * vsize_x + x + vsize_x + 1;
+                _tris[trisOffset + 2] = z * vsize_x + x + vsize_x + 0;
+                _tris[trisOffset + 1] = z * vsize_x + x + vsize_x + 1;
 
                 _tris[trisOffset + 3] = z * vsize_x + x +           0;
-                _tris[trisOffset + 4] = z * vsize_x + x + vsize_x + 1;
-                _tris[trisOffset + 5] = z * vsize_x + x +           1;
+                _tris[trisOffset + 5] = z * vsize_x + x + vsize_x + 1;
+                _tris[trisOffset + 4] = z * vsize_x + x +           1;
 
             }
         }
