@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 
 public class ChestSlot : SlotScript, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler
 {
-   
+    Bag bag;
     ChestInventory chestInventory;
     public override void Start()
     {
-
-        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        bag = GameObject.FindWithTag("Bag").GetComponent<Bag>();
+        inventory = bag.inv.GetComponent<Inventory>();
         chestInventory = transform.parent.GetComponent<ChestInventory>();
         itemImage = gameObject.transform.GetChild(0).GetComponent<Image>();
         itemAmount = gameObject.transform.GetChild(1).GetComponent<Text>();
@@ -78,14 +78,9 @@ public class ChestSlot : SlotScript, IPointerDownHandler, IPointerUpHandler, IPo
         {
             if (inventory.draggingFromInventory)
             {
-                Debug.Log("Fuck");
                 inventory.itemsList[inventory.draggedItemIndex] = chestInventory.itemsList[slotNum];
                 chestInventory.itemsList[slotNum] = inventory.draggedItem;
                 inventory.HideDraggedItem();
-
-                //chestInventory.itemsList[inventory.draggedItemIndex] = chestInventory.itemsList[slotNum];
-                //chestInventory.itemsList[slotNum] = inventory.draggedItem;
-                //inventory.HideDraggedItem();
             }
             else
             {
